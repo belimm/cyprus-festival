@@ -21,7 +21,7 @@ public class FestivalRun {
     @Id
     @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
     private long festivalRunID;
-    private String duration;
+    private int duration;
     private Date date;
 
     @ManyToOne
