@@ -10,18 +10,15 @@ import javax.persistence.*;
 import java.util.ArrayList;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "performerID")
 public class Performer {
-   @Id
-   @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
-   private long performerID;
-   private String name;
+    @Id
+    @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
+    private long performerID;
+    private String name;
 
-   @ManyToOne
-   private Show show;
+    @ManyToOne
+    private Showw show;
 
 
 }
