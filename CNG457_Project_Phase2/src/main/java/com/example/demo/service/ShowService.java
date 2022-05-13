@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.Show;
+import com.example.demo.entity.Showw;
 import com.example.demo.repository.ShowRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,15 +12,15 @@ public class ShowService {
     @Autowired
     ShowRepository showRepository;
 
-    public Show addShow(Show show){
+    public Showw addShow(Showw show){
         return showRepository.save(show);
     }
 
-    public Show getShow(long eventID){
+    public Showw getShow(long eventID){
         return showRepository.findById(eventID).orElse(null);
     }
 
-    public List<Show> getShows(){
+    public List<Showw> getShows(){
         return showRepository.findAll();
     }
 }

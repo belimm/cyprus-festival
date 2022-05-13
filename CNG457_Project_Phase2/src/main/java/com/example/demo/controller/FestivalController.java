@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.entity.Festival;
+import com.example.demo.entity.FestivalRun;
 import com.example.demo.service.FestivalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,5 +31,10 @@ public class FestivalController {
     @GetMapping("/getfestivalsforacity/{city}")
     public List<Festival> getFestivalsForACity(@PathVariable String place){
         return festivalService.getFestivalsForACity(place);
+    }
+
+    @GetMapping("/getfestivalrun/{festivalrunid}")
+    public List<FestivalRun> getFestivalRunsOfAFestival(@PathVariable long festivalID){
+        return festivalService.getFestivalRunsOfAFestival(festivalID);
     }
 }

@@ -3,6 +3,6 @@ package com.example.demo.repository;
 import com.example.demo.entity.OrganizedFestivalRun;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface OrganizedFestivalRunRepository extends JpaRepository<OrganizedFestivalRun, long> {
+public interface OrganizedFestivalRunRepository extends JpaRepository<OrganizedFestivalRun, Long> {
 
 }

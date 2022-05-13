@@ -15,6 +15,7 @@ public class FestivalService {
     FestivalRepository festivalRepository;
 
 
+
     public Festival addFestival(Festival festival){
         return festivalRepository.save(festival);
     }
@@ -27,9 +28,9 @@ public class FestivalService {
         return festivalRepository.findAll();
     }
 
-    /*public List<FestivalRun> getFestivalRuns(long festivalID){
-        return festivalRepository.findAll();
-    }*/
+    public List<FestivalRun> getFestivalRunsOfAFestival(long festivalID){
+        return festivalRepository.findById(festivalID).get().getFestivalRunList();
+    }
 
     public List<Festival> getFestivalsForACity(String place){
         return festivalRepository.findByplaceContains(place);
