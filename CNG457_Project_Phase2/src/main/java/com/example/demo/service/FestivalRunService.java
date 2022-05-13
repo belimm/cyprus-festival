@@ -15,13 +15,18 @@ public class FestivalRunService {
     public FestivalRun addFestivalRun(FestivalRun festivalRun){
         return festivalRunRepository.save(festivalRun);
     }
+
     public FestivalRun getFestivalRun(long festivalRunID){
         return festivalRunRepository.findById(festivalRunID).orElse(null);
     }
 
-
     public List<FestivalRun> getShortFestivalRun(int duration){
         return festivalRunRepository.findBydurationLessThan(duration);
     }
+
+
+
+
+
 
 }

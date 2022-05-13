@@ -14,7 +14,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "deptid")
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "eventID")
 public class Event {
     @Id
     @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)

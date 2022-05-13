@@ -18,14 +18,13 @@ import java.util.List;
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "email")
 public class Organizer {
     @Id
-    @GeneratedValue
     private String email;
     private int phoneNo;
     private String name;
     private String surname;
 
-    @OneToMany(mappedBy = "organizer", cascade = CascadeType.ALL)
-    List<OrganizedFestivalRun> organizedFestivalRunList;
+//    @OneToMany(mappedBy = "organizer", cascade = CascadeType.ALL)
+//    List<OrganizedFestivalRun> organizedFestivalRunList;
 
 
 }

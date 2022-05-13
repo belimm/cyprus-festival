@@ -28,7 +28,7 @@ public class FestivalRun {
     private Festival festival;
 
 
-    @OneToMany(mappedBy = "festivalRun", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "festivalRunn", cascade = CascadeType.ALL)
     List<OrganizedFestivalRun> organizedFestivalRunList;
 
     @OneToMany(mappedBy = "festivalRun", cascade = CascadeType.ALL)

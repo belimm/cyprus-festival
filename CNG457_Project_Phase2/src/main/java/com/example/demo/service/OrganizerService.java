@@ -15,7 +15,10 @@ public class OrganizerService {
         return organizerRepository.save(organizer);
     }
 
-    /*public Organizer getOrganizer(String email){
-        return organizerRepository.findById(email).orElse(null);
-    }*/
+    public Organizer getOrganizer(String organizerId){
+        return organizerRepository.findById(organizerId).get();
+    }
+
+
 }
+

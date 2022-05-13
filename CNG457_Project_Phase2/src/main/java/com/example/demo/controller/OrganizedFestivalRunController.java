@@ -12,8 +12,5 @@ public class OrganizedFestivalRunController {
     @Autowired
     OrganizedFestivalRunService organizedFestivalRunService;
 
-    @PostMapping("/addorganizedfestivalrun")
-    public OrganizedFestivalRun addOrganizedFestivalRun(@RequestBody OrganizedFestivalRun organizedFestivalRun){
-        return organizedFestivalRunService.addOrganizedFestivalRun(organizedFestivalRun);
-    }
+
 }
