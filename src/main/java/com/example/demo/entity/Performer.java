@@ -19,6 +19,4 @@ public class Performer {
 
     @ManyToOne
     private Showw show;
-
-
 }

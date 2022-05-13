@@ -16,7 +16,7 @@ public class OrganizedFestivalRun {
 
     @ManyToOne
     @JoinColumn(name="festivalRunID", insertable = false, updatable = false)
-    FestivalRun festivalRun;
+    FestivalRun festivalRunn;
 
 
 }

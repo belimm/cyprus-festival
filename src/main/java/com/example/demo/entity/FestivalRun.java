@@ -21,14 +21,14 @@ public class FestivalRun {
     @Id
     @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
     private long festivalRunID;
-    private String duration;
+    private int duration;
     private Date date;
 
     @ManyToOne
     private Festival festival;
 
 
-    @OneToMany(mappedBy = "festivalRun", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "festivalRunn", cascade = CascadeType.ALL)
     List<OrganizedFestivalRun> organizedFestivalRunList;
 
     @OneToMany(mappedBy = "festivalRun", cascade = CascadeType.ALL)
