@@ -3,10 +3,9 @@ package com.example.demo.controller;
 import com.example.demo.entity.Concert;
 import com.example.demo.service.ConcertService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 
 
 @RestController
@@ -23,4 +22,15 @@ public class ConcertController {
     public Concert addConcert(@RequestBody Concert concert){
         return concertService.addConcert(concert);
     }
+
+    @GetMapping("/concertsbydescription/{description}")
+    public List<Concert> getConcertsByDescription(@PathVariable String description){
+        return concertService.getConcertByDescription(description);
+    }
+
+    @GetMapping("/longestconcerts")
+    public List<Concert> getLongestConcert(){
+        return concertService.getLongestConcert();
+    }
+
 }
