@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.entity.Concert;
+import com.example.demo.entity.Showw;
 import com.example.demo.repository.ConcertRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,35 +40,35 @@ public class ConcertService {
         return concertRepository.findAll();
     }
 
-    public List<Concert> getConcertByDescription(String description){return concertRepository.getConcertByDescription(description);}
+    public List<Concert> getconcertsbydescription(String description){
+        return concertRepository.findBydescriptionContaining(description);
+    }
 
 
-    public List<Concert> getLongestConcert(){
-        List<Concert> concertList = new ArrayList<>();
+    public List<Concert> getLongestConcerts(){
+        List<Concert> allConcerts= new ArrayList<>();
+        allConcerts = concertRepository.findAll();
 
-        concertList  = concertRepository.findAll();
-        Concert longestConcert = new Concert();
-        String lCDuration = "0 saat";
+        int max=0;
 
-        for(Concert c : concertList){
-            String cDuration = c.getDuration();
-
-            if(longestConcert.getDuration()==null)
-                lCDuration ="0 saat";
-            else
-                lCDuration = longestConcert.getDuration();
-
-            if(cDuration.compareTo(lCDuration)>=0) {
-                longestConcert = c;
+        for(Concert c : allConcerts){
+            if(c.getDuration()>max){
+                max = (int) c.getDuration();
             }
         }
-        ArrayList<Concert> longestConcerts = new ArrayList<>();
 
-        for(Concert c:concertList) {
-            if(c.getDuration().compareTo(longestConcert.getDuration())>=0) longestConcerts.add(c);
+        List<Concert> longestConcerts = new ArrayList<>();
+
+        for(Concert c: allConcerts){
+            if(c.getDuration()==max){
+                longestConcerts.add(c);
+            }
         }
 
         return longestConcerts;
     }
+
+
+
 
 }

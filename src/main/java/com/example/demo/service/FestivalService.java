@@ -59,5 +59,14 @@ public class FestivalService {
         return festivalRepository.findByplaceContains(place);
     }
 
+    public List<Festival> getFestivalbyName(String festivalName){
+        return festivalRepository.getFestivalByName(festivalName);
+    }
+
+    public List<Festival> getPopularFestivals(){return festivalRepository.getPopularFestivals();}
+
+
+
+
 }
 
