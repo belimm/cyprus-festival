@@ -7,6 +7,7 @@ import lombok.Data;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -14,5 +15,7 @@ import java.util.List;
 public class Showw extends Event{
     @OneToMany(mappedBy = "show",cascade = CascadeType.ALL)
     private List<Performer> performers;
+
+
 
 }

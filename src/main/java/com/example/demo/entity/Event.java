@@ -13,20 +13,41 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "eventID")
-public class Event {
+public abstract class Event {
     @Id
-    @GeneratedValue(strategy = javax.persistence.GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private long eventID;
     private String eventName;
     private Date date;
-    private String duration;
+    private int duration;
     private String description;
 
     @ManyToOne
     private FestivalRun festivalRun;
 
+    public long getEventID() {
+        return eventID;
+    }
 
+    public String getEventName() {
+        return eventName;
+    }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public double getDuration() {
+        return duration;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public FestivalRun getFestivalRun() {
+        return festivalRun;
+    }
 }

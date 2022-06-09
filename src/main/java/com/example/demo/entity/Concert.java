@@ -13,10 +13,4 @@ import javax.persistence.Entity;
 public class Concert extends Event {
     private String performer;
 
-    @Override
-    public String toString() {
-        return "Concert{" +
-                "performer='" + performer + '\'' +
-                '}';
-    }
 }

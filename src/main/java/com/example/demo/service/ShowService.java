@@ -39,23 +39,32 @@ public class ShowService {
         return showRepository.findAll();
     }
 
+    public List<Showw> getshowsbyduration(int duration1, int duration2){
+        return showRepository.findBydurationBetween(duration1,duration2);
+    }
+
     public List<Showw> getCrowdedShows(){
-        List<Showw> allShows = showRepository.findAll();
-        int crowded = 0;
+        List<Showw> allShows = new ArrayList<>();
+
+        allShows =  showRepository.findAll();
+
+        int max = 0;
 
         for(Showw s : allShows){
-
-            if(s.getPerformers().size()>crowded)
-                crowded = s.getPerformers().size();
+            if(s.getPerformers().size()>max){
+                max = s.getPerformers().size();
+            }
         }
+        List<Showw> crowdedShows = new ArrayList<>();
 
-        ArrayList<Showw> crowdedShows = new ArrayList<>();
-        for(Showw s : allShows){
-            if(s.getPerformers().size()==crowded)
+        for(Showw s: allShows){
+            if(s.getPerformers().size()==max){
                 crowdedShows.add(s);
+            }
         }
 
         return crowdedShows;
-
     }
+
 }
+

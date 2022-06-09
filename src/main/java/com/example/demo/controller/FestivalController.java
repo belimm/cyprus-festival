@@ -60,6 +60,14 @@ public class FestivalController {
         return festivalService.getFestivalRunsOfAFestival(festivalID);
     }
 
+    @GetMapping("/popularfestivals")
+    public List<Festival> getPopularFestivals(){
+        return festivalService.getPopularFestivals();
+    }
 
+    @GetMapping("/getFestivalsbyname/{festivalName}")
+    public List<Festival> getFestivalsbyName(@PathVariable String festivalName){
+        return festivalService.getFestivalbyName(festivalName);
+    }
 
 }
